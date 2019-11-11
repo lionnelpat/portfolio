@@ -1,0 +1,29 @@
+{
+  "name": "patrick-portfolio",
+  "version": "1.0.0",
+  "description": "\"My portfolio as Web developper\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test",  
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lionnelpat/portfolio.git"
+  },
+  "keywords": [
+    "\"portfolio",
+    "nodejs",
+    "html",
+    "css\""
+  ],
+  "author": "Lionnel Patrick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lionnelpat/portfolio/issues"
+  },
+  "homepage": "https://github.com/lionnelpat/portfolio#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
