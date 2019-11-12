@@ -24,7 +24,10 @@ build:
 #Production
 deploy:
   type: deploy
+  image: ruby:latest
   script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
     - gem install dpl
     - dpl --provider=heroku --app=portfolio --api-key=$HEROKU_PRODUCTION_API_KEY
   only: 
