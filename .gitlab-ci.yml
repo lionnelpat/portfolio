@@ -14,18 +14,18 @@ stages:
  - docker
  - deploy
 
-#Pre-production
-build:
-  type: build
-  cache:
-    paths:
-      - dist/
-  script:
-    - npm install
-    - npm run build
-  only: 
-    - develop
-    - master
+# #Pre-production
+# build:
+#   type: build
+#   cache:
+#     paths:
+#       - dist/
+#   script:
+#     - npm install
+#     - npm run build
+#   only: 
+#     - develop
+#     - master
 
 #Production
 deploy:
