@@ -45,6 +45,7 @@ build:
 #     - docker push "registry.gitlab.com/lionnelPat/portfolio"
 deploy:
   type: deploy
+  image: ruby:latest
   script:
     - gem install dpl
     - dpl --provider=heroku --app=lionnel-patrick --api-key=$HEROKU_PRODUCTION_API_KEY
