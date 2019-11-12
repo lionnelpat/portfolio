@@ -1,10 +1,10 @@
-FROM node:latest
+FROM node:10
 
 RUN mkdir -p /var/www/html
 WORKDIR /var/www/html
 COPY . .
 
-RUN npm i
+RUN npm install
 RUN npm run build
 RUN npm i serve -g
 
