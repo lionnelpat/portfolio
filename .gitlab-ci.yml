@@ -17,6 +17,9 @@ stages:
 #Pre-production
 build:
   type: build
+  cache:
+    paths:
+      - dist/
   script:
     - npm install
     - npm run build
