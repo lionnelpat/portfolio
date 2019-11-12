@@ -10,7 +10,7 @@ cache:
 stages:
  - build
  - test
- - docker
+ - deploy
 
 #Pre-production
 build:
@@ -19,6 +19,15 @@ build:
     - npm run build
   only: 
     - develop
+    - master
+
+#Production
+deploy:
+  type: deploy
+  script:
+    - gem install dpl
+    - dpl --provider=heroku --app=portfolio --api-key=$HEROKU_PRODUCTION_API_KEY
+  only: 
     - master
 
 # docker:
