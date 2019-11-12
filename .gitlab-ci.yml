@@ -1,9 +1,17 @@
+image: node:lastest
+ 
+before_script:
+ - npm install
+ 
+cache:
+ paths:
+ - node_modules/
+ 
 stages:
-  - build
+ - build
 
 build:
-  stage: build
-  image: node:latest
+  type: build
   script:
     - npm i && npm run build
   artifacts:
