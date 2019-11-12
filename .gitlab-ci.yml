@@ -24,33 +24,33 @@ build:
     - develop
     - master
 
-# #Production
-# deploy:
-#   type: deploy
-#   image: ruby:latest
-#   script:
-#     - apt-get update -qy
-#     - apt-get install -y ruby-dev
-#     - gem install dpl
-#     - dpl --provider=heroku --app=portfolio --api-key=$HEROKU_PRODUCTION_API_KEY
-#   only: 
-#     - master
-
-# docker:
-#   stage: docker
-#   image: docker:latest
-#   services:
-#     - docker:dind
-#   script:
-#     - apk add --update py-pip && pip install docker-compose
-#     - docker login -u gitlab-ci-token -p "BwVt5_3V9v972s8Krbw7" "registry.gitlab.com"
-#     - docker-compose build
-#     - docker push "registry.gitlab.com/lionnelPat/portfolio"
+#Production
 deploy:
   type: deploy
   image: ruby:latest
   script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
     - gem install dpl
-    - dpl --provider=heroku --app=lionnel-patrick --api-key=$HEROKU_PRODUCTION_API_KEY
-  only:
+    - dpl --provider=heroku --app=portfolio --api-key=$HEROKU_PRODUCTION_API_KEY
+  only: 
     - master
+
+docker:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - apk add --update py-pip && pip install docker-compose
+    - docker login -u gitlab-ci-token -p "BwVt5_3V9v972s8Krbw7" "registry.gitlab.com"
+    - docker-compose build
+    - docker push "registry.gitlab.com/lionnelPat/portfolio"
+# deploy:
+#   type: deploy
+#   image: ruby:latest
+#   script:
+#     - gem install dpl
+#     - dpl --provider=heroku --app=lionnel-patrick --api-key=$HEROKU_PRODUCTION_API_KEY
+#   only:
+#     - master
