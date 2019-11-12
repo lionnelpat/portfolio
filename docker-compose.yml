@@ -1,0 +1,9 @@
+version: "2"
+  services:
+  app:
+  build:
+    context: .
+    dockerfile: Dockerfile
+    image: registry.git@gitlab.com:lionnelPat/portfolio
+  ports:
+    - 5000:5000

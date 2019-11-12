@@ -10,6 +10,7 @@ cache:
 stages:
  - build
  - test
+ - docker
 
 #Pre-production
 build:
@@ -19,3 +20,14 @@ build:
   only: 
     - develop
     - master
+
+docker:
+  stage: docker
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - apk add --update py-pip && pip install docker-compose
+    - docker login -u gitlab-ci-token -p "BwVt5_3V9v972s8Krbw7" "registry.gitlab.com"
+    - docker-compose build
+    - docker push "registry.gitlab.com/lionnelPat/portfolio"
