@@ -10,10 +10,11 @@ cache:
 stages:
  - build
 
+#Pre-production
 build:
   type: build
   script:
-    - npm i && npm run build
-  artifacts:
-  paths:
-    - build/
+    - npm run build
+  only: 
+    - develop
+    - master
