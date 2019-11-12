@@ -1,9 +1,9 @@
 image: node:latest
  
-before_script:
-  - apt-get update -qy
-  - apt-get install -y ruby-dev
-  - gem install dpl
+# before_script:
+#   - apt-get update -qy
+#   - apt-get install -y ruby-dev
+#   - gem install dpl
  
 cache:
  paths:
