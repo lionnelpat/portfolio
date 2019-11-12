@@ -67,3 +67,5 @@ If you'd like to **use the template without the footer attribution**, you can [b
 ## Credits
 - [Bootstrap](http://getbootstrap.com/)
 - [FontAwesome](http://fortawesome.github.io/Font-Awesome/)
+
+[![pipeline status](https://gitlab.com/nlabbe/gitlab-workshop/badges/master/pipeline.svg)](https://gitlab.com/nlabbe/gitlab-workshop/commits/master)
