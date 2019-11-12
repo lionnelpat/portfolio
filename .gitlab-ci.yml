@@ -1,25 +1,25 @@
-# image: node:latest
+image: node:latest
  
-# before_script:
-#  - npm install
+before_script:
+ - npm install
  
-# cache:
-#  paths:
-#  - node_modules/
+cache:
+ paths:
+ - node_modules/
  
-# stages:
-#  - build
-#  - test
-#  - deploy
+stages:
+ - build
+ - test
+ - deploy
 
-# #Pre-production
-# build:
-#   type: build
-#   script:
-#     - npm run build
-#   only: 
-#     - develop
-#     - master
+#Pre-production
+build:
+  type: build
+  script:
+    - npm run build
+  only: 
+    - develop
+    - master
 
 # #Production
 # deploy:
@@ -43,7 +43,7 @@
 #     - docker login -u gitlab-ci-token -p "BwVt5_3V9v972s8Krbw7" "registry.gitlab.com"
 #     - docker-compose build
 #     - docker push "registry.gitlab.com/lionnelPat/portfolio"
-deployment:
+deploy:
   type: deploy
   script:
     - gem install dpl
