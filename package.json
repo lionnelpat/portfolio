@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "\"My portfolio as Web developper\"",
   "main": "index.js",
+  "engines": {
+    "node": "10.15.3"
+  },
   "scripts": {
     "test": "npm run test",
     "start": "nodemon --exec babel-node index.js",
