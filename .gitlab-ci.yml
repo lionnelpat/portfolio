@@ -11,7 +11,7 @@ cache:
  
 stages:
  - build
- - test
+ - docker
  - deploy
 
 #Pre-production
@@ -35,9 +35,9 @@ deploy:
     - dpl --provider=heroku --app=portfolio --api-key=$HEROKU_PRODUCTION_API_KEY
   only: 
     - master
-
+    
 docker:
-  stage: docker
+  type: docker
   image: docker:latest
   services:
     - docker:dind
@@ -46,11 +46,3 @@ docker:
     - docker login -u gitlab-ci-token -p "BwVt5_3V9v972s8Krbw7" "registry.gitlab.com"
     - docker-compose build
     - docker push "registry.gitlab.com/lionnelPat/portfolio"
-# deploy:
-#   type: deploy
-#   image: ruby:latest
-#   script:
-#     - gem install dpl
-#     - dpl --provider=heroku --app=lionnel-patrick --api-key=$HEROKU_PRODUCTION_API_KEY
-#   only:
-#     - master
