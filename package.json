@@ -9,7 +9,6 @@
   "scripts": {
     "test": "npm run test",
     "start": "nodemon --exec babel-node index.js",
-    "build": "babel --out-dir dist -s --presets=@babel/preset-env",
     "serve": "node index.js"
   },
   "repository": {
